@@ -8,6 +8,7 @@ public class User
 
     public User()
     {
+
     }
 
     public void setUid(String uid) {
