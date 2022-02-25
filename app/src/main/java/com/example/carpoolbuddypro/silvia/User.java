@@ -74,6 +74,18 @@ public class User
     private double pricemult;
     private ArrayList<String> ownveh;
 
+
+    public User (String uid, String email )
+    {
+        this.uid = uid;
+        this.email = email;
+    }
+
+
+
+
+
+
     public User(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance) {
         this.uid = uid;
         this.name = name;
