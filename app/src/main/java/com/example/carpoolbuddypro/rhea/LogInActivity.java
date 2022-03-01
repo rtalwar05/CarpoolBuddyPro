@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.carpoolbuddypro.MainActivity;
 import com.example.carpoolbuddypro.R;
 import com.example.carpoolbuddypro.silvia.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -129,10 +130,10 @@ public class LogInActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser currUser) {
 
-//        if (currUser != null) {
-//            Intent intent = new Intent(this, MainActivity.class);
-//            startActivity(intent);
-//        }
+        if (currUser != null) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
     }
 
