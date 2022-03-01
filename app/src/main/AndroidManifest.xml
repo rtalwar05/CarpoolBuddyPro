@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.carpoolbuddypro">
+    package="com.example.carpoolbuddypro" >
 
     <application
         android:allowBackup="true"
@@ -9,13 +9,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CarpoolBuddyPro">
+        android:theme="@style/Theme.CarpoolBuddyPro" >
         <activity
             android:name=".audrey.TestingActivity"
             android:exported="true" />
         <activity
+            android:name=".silvia.ui.main.SilviastestingactivityActivity"
+            android:exported="false"
+            android:label="@string/title_activity_silviastestingactivity"
+            android:theme="@style/Theme.CarpoolBuddyPro.NoActionBar" />
+        <activity
             android:name=".rhea.LogInActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
