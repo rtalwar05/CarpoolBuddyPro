@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Myriam.Profile">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/typeTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginBottom="35dp"
+            android:text="Type:"
+            app:layout_constraintBottom_toTopOf="@+id/greenPointsTag"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/nameTag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginBottom="29dp"
+            android:text="Name:"
+            app:layout_constraintBottom_toTopOf="@+id/typeTag"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/usernameInput"
+            android:layout_width="172dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/username"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="184dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/password2"
+            app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
+
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="169dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+        <TextView
+            android:id="@+id/usernameTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginBottom="32dp"
+            android:text="Username:"
+            app:layout_constraintBottom_toTopOf="@+id/passwordTag"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/passwordTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginBottom="40dp"
+            android:text="Password:"
+            app:layout_constraintBottom_toTopOf="@+id/nameTag2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="36dp"
+            android:text="username"
+            app:layout_constraintBottom_toTopOf="@+id/password2"
+            app:layout_constraintStart_toEndOf="@+id/usernameTag" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="37dp"
+            android:text="name"
+            app:layout_constraintStart_toEndOf="@+id/nameTag2"
+            app:layout_constraintTop_toBottomOf="@+id/password2" />
+
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="308dp"
+            android:text="type"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/typeTag"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/password2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text="password"
+            app:layout_constraintStart_toEndOf="@+id/passwordTag"
+            tools:layout_editor_absoluteY="320dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="124dp"
+            android:layout_height="195dp"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="144dp"
+            android:src="@android:drawable/sym_def_app_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/typeSpinner"
+            android:layout_width="129dp"
+            android:layout_height="22dp"
+            tools:layout_editor_absoluteX="245dp"
+            tools:layout_editor_absoluteY="421dp" />
+
+        <TextView
+            android:id="@+id/greenPointsTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginBottom="234dp"
+            android:text="Green Points:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
