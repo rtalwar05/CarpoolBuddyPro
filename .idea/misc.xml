@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.20729051664994513" />
+        <entry key="app/src/main/res/layout/activity_silviastestingactivity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/app_bar_silviastestingactivity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/content_silviastestingactivity.xml" value="0.15526849037487336" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.6313637733648175" />
+        <entry key="app/src/main/res/layout/testsilvia_activity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/menu/silviastestingactivity.xml" value="0.32685185185185184" />
       </map>
     </option>
   </component>
