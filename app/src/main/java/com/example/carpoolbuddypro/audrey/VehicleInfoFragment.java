@@ -1,4 +1,4 @@
-package com.example.carpoolbuddypro;
+package com.example.carpoolbuddypro.audrey;
 
 import android.os.Bundle;
 
@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.carpoolbuddypro.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,19 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class VehicleInfoFragment extends Fragment {
+
+    private FirebaseFirestore firestore;
+    private FirebaseAuth mAuth;
+
+    private TextView licensePlateTextView;
+    private TextView ownerTextView;
+    private TextView modelTextView;
+    private TextView capacityTextView;
+    private TextView basePriceTextView;
+    private TextView greenPointsTextView;
+    private Button bookVehicleButton;
+    private Button chatWithDriverButton;
+    private Button seePickupLocationButton;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +72,8 @@ public class VehicleInfoFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        mAuth = FirebaseAuth.getInstance();
+        firestore = FirebaseFirestore.getInstance();
     }
 
     @Override
@@ -62,3 +83,4 @@ public class VehicleInfoFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_vehicle_info, container, false);
     }
 }
+
