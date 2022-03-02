@@ -144,5 +144,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chatButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </FrameLayout>
