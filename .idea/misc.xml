@@ -11,6 +11,8 @@
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_new.xml" value="0.12083333333333333" />
         <entry key="app/src/main/res/layout/activity_testing.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/chat_profile_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/chat_user_profile.xml" value="0.13069908814589665" />
         <entry key="app/src/main/res/layout/fragment_available_vehicles.xml" value="0.12604166666666666" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.39741238947330515" />
         <entry key="app/src/main/res/layout/fragment_new_vehicle.xml" value="0.12604166666666666" />

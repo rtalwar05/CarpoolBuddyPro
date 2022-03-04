@@ -22,10 +22,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="3dp"
-        android:id="@+id/rv_chat"
-
-
+        android:layout_margin="5dp"
+        android:id="@+id/rv_chat"/>
 
 
 </LinearLayout>
