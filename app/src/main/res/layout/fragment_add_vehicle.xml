@@ -203,5 +203,32 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.775" />
 
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="102dp"
+            android:layout_height="78dp"
+            android:src="@drawable/ic_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038" />
+
+        <Button
+            android:id="@+id/addvehiclebutt"
+            android:layout_width="206dp"
+            android:layout_height="53dp"
+            android:backgroundTint="#000000"
+            android:text="Add Vehicle"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.907"
+            app:strokeColor="#000000" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

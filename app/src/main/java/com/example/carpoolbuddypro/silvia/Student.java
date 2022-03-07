@@ -27,9 +27,9 @@ public class Student extends User
         this.parentUID = parentUID;
     }
 
-    public Student(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance, String graduationyear, ArrayList<String> parentUID )
+    public Student(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance, int greenpoints, String graduationyear, ArrayList<String> parentUID )
     {
-        super(uid, name, email, usertype, pricemult, ownveh, balance);
+        super(uid, name, email, usertype, pricemult, ownveh, balance, greenpoints);
         this.graduationyear = graduationyear;
         this.parentUID = parentUID;
     }

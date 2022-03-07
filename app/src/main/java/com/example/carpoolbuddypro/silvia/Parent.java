@@ -14,9 +14,9 @@ public class Parent extends User{
                       String email,
                       String usertype,
                       double pricemult, double balance,
-                      ArrayList<String> ownveh,
+                      ArrayList<String> ownveh,int greenpoints,
                       ArrayList<String> children) {
-            super(uid, name, email, usertype, pricemult, ownveh, balance);
+            super(uid, name, email, usertype, pricemult, ownveh, balance, greenpoints);
             this.childrenUIDs = children;
         }
 

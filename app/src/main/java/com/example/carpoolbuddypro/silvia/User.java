@@ -73,6 +73,7 @@ public class User
     private String usertype;
     private double pricemult;
     private ArrayList<String> ownveh;
+    private int greenpoints;
 
 
     public User (String uid, String email )
@@ -86,7 +87,7 @@ public class User
 
 
 
-    public User(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance) {
+    public User(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance, int greenpoints) {
         this.uid = uid;
         this.name = name;
         this.email = email;

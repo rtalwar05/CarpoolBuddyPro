@@ -18,8 +18,8 @@ public class Teacher extends User
         this.inschooltitle = inschooltitle;
     }
 
-    public Teacher(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance, String inschooltitle) {
-        super(uid, name, email, usertype, pricemult, ownveh, balance);
+    public Teacher(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance, int greenpoints, String inschooltitle) {
+        super(uid, name, email, usertype, pricemult, ownveh, balance, greenpoints);
         this.inschooltitle = inschooltitle;
     }
 
