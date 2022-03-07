@@ -7,27 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-import com.example.carpoolbuddypro.ChatFragment;
 import com.example.carpoolbuddypro.R;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.lang.reflect.Array;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ChatFragment#newInstance} factory method to
+ * Use the {@link AddVehicleFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AvailableVehiclesFragment extends Fragment {
-
-    private FirebaseFirestore mfStore;
-    private FirebaseUser mUser;
-    private Spinner select;
-    private static String[] spinnerthings;
+public class AddVehicleFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,7 +26,7 @@ public class AvailableVehiclesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AvailableVehiclesFragment() {
+    public AddVehicleFragment() {
         // Required empty public constructor
     }
 
@@ -48,11 +36,11 @@ public class AvailableVehiclesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AvailableVehiclesFragment.
+     * @return A new instance of fragment AddVehicleFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AvailableVehiclesFragment newInstance(String param1, String param2) {
-        AvailableVehiclesFragment fragment = new AvailableVehiclesFragment();
+    public static AddVehicleFragment newInstance(String param1, String param2) {
+        AddVehicleFragment fragment = new AddVehicleFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,21 +55,12 @@ public class AvailableVehiclesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        setupspinner();
-
-    }
-
-    public void setupspinner()
-    {
-        select = getView().findViewById(R.id.spinner);
-        String spinnerthings[] = new String[]{"Electric","Hybrid","Gasoline"};
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerthings);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false);
+        return inflater.inflate(R.layout.fragment_add_vehicle, container, false);
     }
 }

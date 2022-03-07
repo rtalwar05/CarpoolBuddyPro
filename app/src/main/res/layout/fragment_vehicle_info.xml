@@ -36,7 +36,7 @@
 
         <ImageView
             android:id="@+id/carImageView"
-            android:layout_width="130"
+            android:layout_width="130dp"
             android:layout_height="115dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/ic_message"

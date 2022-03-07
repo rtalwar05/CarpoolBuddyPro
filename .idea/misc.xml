@@ -3,22 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/car.xml" value="0.25677083333333334" />
-        <entry key="app/src/main/res/drawable/ic_message.xml" value="0.1453125" />
-        <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_new.xml" value="0.12083333333333333" />
-        <entry key="app/src/main/res/layout/activity_testing.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_one.xml" value="0.240625" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_two.xml" value="0.13903985507246377" />
-        <entry key="app/src/main/res/layout/fragment_vehicle_info.xml" value="0.25" />
-        <entry key="app/src/main/res/drawable/ic_message.xml" value="0.1453125" />
-        <entry key="app/src/main/res/layout/fragment_available_vehicles.xml" value="0.12604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.12604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_new_vehicle.xml" value="0.12604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33611111111111114" />
-        <entry key="app/src/main/res/layout/fragment_vehicle_info.xml" value="0.12604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_your_vehicle.xml" value="0.12604166666666666" />
+        <entry key="app/src/main/res/layout/activity_silviastestingactivity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/app_bar_silviastestingactivity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/content_silviastestingactivity.xml" value="0.15526849037487336" />
+        <entry key="app/src/main/res/layout/fragment_add_vehicle.xml" value="0.2380164221774117" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/fragment_one.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/fragment_vehicle_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.6313637733648175" />
+        <entry key="app/src/main/res/layout/testsilvia_activity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/menu/silviastestingactivity.xml" value="0.32685185185185184" />
       </map>
     </option>
   </component>
