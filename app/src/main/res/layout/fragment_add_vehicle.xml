@@ -219,6 +219,7 @@
             android:layout_width="206dp"
             android:layout_height="53dp"
             android:backgroundTint="#000000"
+            android:onClick="addvehi"
             android:text="Add Vehicle"
             android:textColor="#FFFFFF"
             android:textSize="20sp"

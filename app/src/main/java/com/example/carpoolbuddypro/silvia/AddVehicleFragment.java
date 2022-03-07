@@ -14,8 +14,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.carpoolbuddypro.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +30,10 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
     private FirebaseFirestore mfStore;
     private FirebaseUser mUser;
     private Spinner select;
-    private static String[] spinnerthings;
+    private TextInputEditText bigplate;
+    private TextInputEditText bigmod;
+    private TextInputEditText bigcap;
+    private TextInputEditText bigbase;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,6 +73,10 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        bigplate = (TextInputEditText) getView().findViewById(R.id.liscenceplatenumber);
+        bigmod = (TextInputEditText) getView().findViewById(R.id.model);
+        bigbase = (TextInputEditText) getView().findViewById(R.id.baseprice);
+        bigcap = (TextInputEditText) getView().findViewById(R.id.capacity);
         select = (Spinner) getView().findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),R.array.energy, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -79,6 +89,14 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_vehicle, container, false);
+    }
+    public void addvehi (View v)
+    {
+        String lisplate = bigplate.getText().toString();
+        String model = bigmod.getText().toString();
+        String capac = bigcap.getText().toString();
+        String basepri = bigbase.getText().toString();
+//public Vehicle(String owner, String model, String vID, int capacity, ArrayList<String> ridersUID, boolean open, String type, double basePrice, boolean isGreen)
     }
 
     @Override

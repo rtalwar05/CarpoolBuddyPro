@@ -4,39 +4,40 @@ import java.util.ArrayList;
 
 public class Vehicle {
 
-    String owner;
+    String liscenseplate;
     String model;
-    String vehicleID;
     int capacity;
     ArrayList<String> ridersUID;
     boolean open;
-    String vehicleType;
     double basePrice;
     boolean isGreen;
 
     public Vehicle (){}
 
-    public Vehicle(String owner, String model, String vID, int capacity,
-                   ArrayList<String> ridersUID, boolean open, String type,
+    public Vehicle(String liscenseplate, String model, int capacity,
+                   ArrayList<String> ridersUID, boolean open,
                    double basePrice, boolean isGreen) {
-        this.owner = owner;
+        this.liscenseplate = liscenseplate;
         this.model = model;
-        this.vehicleID = vID;
         this.capacity = capacity;
         this.ridersUID = ridersUID;
         this.open = open;
-        this.vehicleType = type;
         this.basePrice = basePrice;
+        this.isGreen = isGreen;
 
 
     }
 
-    public String getOwner() {
-        return owner;
+    public String getLiscenseplate() {
+        return liscenseplate;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setLiscenseplate(String liscenseplate) {
+        this.liscenseplate = liscenseplate;
+    }
+
+    public boolean isGreen() {
+        return isGreen;
     }
 
     public String getModel() {
@@ -45,14 +46,6 @@ public class Vehicle {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getVehicleID() {
-        return vehicleID;
-    }
-
-    public void setVehicleID(String vehicleID) {
-        this.vehicleID = vehicleID;
     }
 
     public int getCapacity() {
@@ -77,14 +70,6 @@ public class Vehicle {
 
     public void setOpen(boolean open) {
         this.open = open;
-    }
-
-    public String getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
     }
 
     public double getBasePrice() {
