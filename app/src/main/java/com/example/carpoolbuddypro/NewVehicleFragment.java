@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.carpoolbuddypro.silvia.ChatFragment;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ChatFragment#newInstance} factory method to
