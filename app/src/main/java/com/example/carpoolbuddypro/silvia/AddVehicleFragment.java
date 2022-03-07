@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.carpoolbuddypro.R;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -29,11 +30,15 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
 
     private FirebaseFirestore mfStore;
     private FirebaseUser mUser;
+    private FirebaseAuth mAuth;
     private Spinner select;
     private TextInputEditText bigplate;
     private TextInputEditText bigmod;
     private TextInputEditText bigcap;
     private TextInputEditText bigbase;
+    private Button opened;
+    private Button green;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -73,6 +78,11 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        opened = (Button) getView().findViewById(R.id.switch1);
+        green = (Button) getView().findViewById(R.id.checkBox);
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        mfStore = FirebaseFirestore.getInstance();
         bigplate = (TextInputEditText) getView().findViewById(R.id.liscenceplatenumber);
         bigmod = (TextInputEditText) getView().findViewById(R.id.model);
         bigbase = (TextInputEditText) getView().findViewById(R.id.baseprice);
@@ -96,7 +106,16 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
         String model = bigmod.getText().toString();
         String capac = bigcap.getText().toString();
         String basepri = bigbase.getText().toString();
-//public Vehicle(String owner, String model, String vID, int capacity, ArrayList<String> ridersUID, boolean open, String type, double basePrice, boolean isGreen)
+        Boolean openornot;
+        Boolean greenornot;
+        if (opened.isPressed())
+        {
+            openornot = true;
+        }
+        if (green.isSelected())
+        {
+            greenornot = true;
+        }
     }
 
     @Override

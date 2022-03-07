@@ -67,6 +67,14 @@ public class User
         this.balance = balance;
     }
 
+    public int getGreenpoints() {
+        return greenpoints;
+    }
+
+    public void setGreenpoints(int greenpoints) {
+        this.greenpoints = greenpoints;
+    }
+
     private String name;
     private String email;
     private double balance;
@@ -75,17 +83,11 @@ public class User
     private ArrayList<String> ownveh;
     private int greenpoints;
 
-
     public User (String uid, String email )
     {
         this.uid = uid;
         this.email = email;
     }
-
-
-
-
-
 
     public User(String uid, String name, String email, String usertype, double pricemult, ArrayList<String> ownveh, double balance, int greenpoints) {
         this.uid = uid;
@@ -95,6 +97,7 @@ public class User
         this.pricemult = pricemult;
         this.ownveh = ownveh;
         this.balance = balance;
+        this.greenpoints = greenpoints;
     }
 
 

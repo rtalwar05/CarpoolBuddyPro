@@ -16,5 +16,6 @@
         <item>Electric</item>
         <item>Hybrid</item>
         <item>Natural Gas</item>
+        <item>Gasoline(bad)</item>
     </string-array>
 </resources>
