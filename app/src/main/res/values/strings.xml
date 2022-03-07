@@ -12,4 +12,9 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string-array name="energy">
+        <item>Electric</item>
+        <item>Hybrid</item>
+        <item>Natural Gas</item>
+    </string-array>
 </resources>

@@ -23,11 +23,6 @@ import java.lang.reflect.Array;
  */
 public class AvailableVehiclesFragment extends Fragment {
 
-    private FirebaseFirestore mfStore;
-    private FirebaseUser mUser;
-    private Spinner select;
-    private static String[] spinnerthings;
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -66,15 +61,7 @@ public class AvailableVehiclesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        setupspinner();
 
-    }
-
-    public void setupspinner()
-    {
-        select = getView().findViewById(R.id.spinner);
-        String spinnerthings[] = new String[]{"Electric","Hybrid","Gasoline"};
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spinnerthings);
     }
 
     @Override
