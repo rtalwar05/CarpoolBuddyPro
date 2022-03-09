@@ -2,6 +2,7 @@ package com.example.carpoolbuddypro.silvia;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,9 +15,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.carpoolbuddypro.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -38,7 +42,7 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
     private TextInputEditText bigbase;
     private Button opened;
     private Button green;
-
+    private User curuser;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -81,7 +85,6 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
         opened = (Button) getView().findViewById(R.id.switch1);
         green = (Button) getView().findViewById(R.id.checkBox);
         mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
         mfStore = FirebaseFirestore.getInstance();
         bigplate = (TextInputEditText) getView().findViewById(R.id.liscenceplatenumber);
         bigmod = (TextInputEditText) getView().findViewById(R.id.model);
@@ -100,6 +103,21 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_vehicle, container, false);
     }
+    public void addtouser(FirebaseUser user)
+    {
+        mfStore.collection("Users").document(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task)
+            {
+                if (task.isSuccessful())
+                {
+                    DocumentSnapshot bigu = task.getResult();
+                    curuser = bigu.toObject(User.class);
+                }
+            }
+        });
+    }
+
     public void addvehi (View v)
     {
         String lisplate = bigplate.getText().toString();
