@@ -11,12 +11,13 @@ public class Vehicle {
     boolean open;
     double basePrice;
     boolean isGreen;
+    String energytype;
 
     public Vehicle (){}
 
     public Vehicle(String liscenseplate, String model, int capacity,
                    ArrayList<String> ridersUID, boolean open,
-                   double basePrice, boolean isGreen) {
+                   double basePrice, boolean isGreen, String energytype) {
         this.liscenseplate = liscenseplate;
         this.model = model;
         this.capacity = capacity;
@@ -24,8 +25,16 @@ public class Vehicle {
         this.open = open;
         this.basePrice = basePrice;
         this.isGreen = isGreen;
+        this.energytype = energytype;
 
+    }
 
+    public String getEnergytype() {
+        return energytype;
+    }
+
+    public void setEnergytype(String energytype) {
+        this.energytype = energytype;
     }
 
     public String getLiscenseplate() {

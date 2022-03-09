@@ -104,18 +104,29 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
     {
         String lisplate = bigplate.getText().toString();
         String model = bigmod.getText().toString();
-        String capac = bigcap.getText().toString();
-        String basepri = bigbase.getText().toString();
+        int capac = Integer.parseInt(bigcap.getText().toString());
+        int basepri = Integer.parseInt(bigbase.getText().toString());
         Boolean openornot;
         Boolean greenornot;
         if (opened.isPressed())
         {
             openornot = true;
         }
+        else
+            {
+                openornot = false;
+            }
         if (green.isSelected())
         {
             greenornot = true;
         }
+        else
+            {
+                greenornot = false;
+            }
+        String energytype = select.getSelectedItem().toString();
+        Vehicle addedv = new Vehicle(lisplate, model, capac, new ArrayList<String>(), openornot, basepri, greenornot, energytype);
+        mfStore.collection("Vehicles").document(lisplate).set(addedv);
     }
 
     @Override
