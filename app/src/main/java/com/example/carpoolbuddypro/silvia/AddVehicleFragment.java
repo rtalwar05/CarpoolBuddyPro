@@ -43,6 +43,7 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
     private Button opened;
     private Button green;
     private User curuser;
+    private String lisplate;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,6 +96,7 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         select.setAdapter(adapter);
         select.setOnItemSelectedListener(this);
+        lisplate = bigplate.getText().toString();
     }
 
     @Override
@@ -114,8 +116,13 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
                     DocumentSnapshot bigu = task.getResult();
                     curuser = bigu.toObject(User.class);
                 }
+                else
+                {
+                    //toast thingy
+                }
             }
         });
+        curuser.getOwnveh().add(lisplate);
     }
 
     public void addvehi (View v)
@@ -134,7 +141,7 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
             {
                 openornot = false;
             }
-        if (green.isSelected())
+        if (green.isPressed())
         {
             greenornot = true;
         }
