@@ -16,11 +16,6 @@
             android:name=".audrey.TestingActivity"
             android:exported="true" />
         <activity
-            android:name=".silvia.ui.main.SilviastestingactivityActivity"
-            android:exported="false"
-            android:label="@string/title_activity_silviastestingactivity"
-            android:theme="@style/Theme.CarpoolBuddyPro.NoActionBar" />
-        <activity
             android:name=".rhea.LogInActivity"
             android:exported="true">
             <intent-filter>
