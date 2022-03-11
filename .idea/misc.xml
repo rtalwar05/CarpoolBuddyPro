@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/car.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/drawable/ic_grey_search_24.xml" value="0.2805128205128205" />
+        <entry key="app/src/main/res/drawable/ic_message.xml" value="0.1453125" />
+        <entry key="app/src/main/res/drawable/search_back.xml" value="0.2805128205128205" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.2666752084055957" />
+        <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_new.xml" value="0.12083333333333333" />
+        <entry key="app/src/main/res/layout/activity_testing.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/chat_profile_item.xml" value="0.3599425744516574" />
+        <entry key="app/src/main/res/layout/chat_user_profile.xml" value="0.13069908814589665" />
+        <entry key="app/src/main/res/layout/fragment_available_vehicles.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.39741238947330515" />
+        <entry key="app/src/main/res/layout/fragment_new_vehicle.xml" value="0.12604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_one.xml" value="0.240625" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/layout/fragment_two.xml" value="0.13903985507246377" />
+        <entry key="app/src/main/res/layout/fragment_vehicle_info.xml" value="0.12604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_your_vehicle.xml" value="0.12604166666666666" />
+        <entry key="app/src/main/res/layout/vehicle_row_view.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_silviastestingactivity.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/app_bar_silviastestingactivity.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/chat_profile_item.xml" value="0.21557971014492755" />
