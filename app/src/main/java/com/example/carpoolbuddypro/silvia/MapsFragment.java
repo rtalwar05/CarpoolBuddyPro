@@ -2,8 +2,14 @@ package com.example.carpoolbuddypro.silvia;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.location.LocationListenerCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -18,6 +24,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
+
+import java.util.List;
 
 public class MapsFragment extends Fragment implements OnMapReadyCallback{
     GoogleMap map;
@@ -41,9 +55,54 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
         @Override
         public void onMapReady(GoogleMap googleMap) {
             map = googleMap;
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+            locationListener = new LocationListenerCompat() {
+                @Override
+                public void onStatusChanged(@NonNull String provider, int status, @Nullable Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(@NonNull String provider) {
+
+                }
+
+                @Override
+                public void onProviderDisabled(@NonNull String provider) {
+
+                }
+
+                @Override
+                public void onLocationChanged(@NonNull Location location)
+                {
+                    //store user latlong
+                    userLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+                    map.clear();//clear old location pin
+                    googleMap.addMarker(new MarkerOptions().position(userLatLng).title("Your location"));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(userLatLng));
+
+                }
+            };
+            askLocation();
+        }
+        private void askLocation()
+        {
+            Dexter.withActivity(getActivity()).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
+                @Override
+                public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+
+                }
+
+                @Override
+                public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+                }
+
+                @Override
+                public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+
+                }
+            }).check();
         }
     };
 
