@@ -35,16 +35,15 @@ public class Profile extends Fragment {
     private TextView textView3;
     private TextView textView4;
     private TextView textView5;
-    private TextView pointsTextView;
-    private EditText usernameInput;
+    private EditText emailInput;
     private EditText nameInput;
     private EditText passInput;
 
-    private String username;
+    private String uemail;
     private String name;
     private String type;
     private String points;
-    private String pass;
+    private String userID;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -80,112 +79,37 @@ public class Profile extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        textView1 = (TextView)getView().findViewById(R.id.username);
-        textView2 = (TextView)getView().findViewById(R.id.name);
-        textView3 = (TextView)getView().findViewById(R.id.type);
-        textView4 = (TextView)getView().findViewById(R.id.password2);
-        textView5 = (TextView)getView().findViewById(R.id.points);
 
-        passInput = (EditText) getView().findViewById(R.id.passwordInput);
-        nameInput = (EditText) getView().findViewById(R.id.nameInput);
-        usernameInput = (EditText) getView().findViewById(R.id.usernameInput);
-
-        firestore = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currUser = mAuth.getCurrentUser();
-        String email = currUser.getEmail();
-
-        username = "error";
-        name = "error";
-        type = "error";
-        points = "error";
-        pass = "error";
-
-        //DO: is this the right collection part
-        firestore.collection("users/students/y12").whereEqualTo("email", email).get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
-                {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (DocumentSnapshot ds : task.getResult().getDocuments())
-                        {
-                            //get information from profile
-
-                            //DO: are the variable type name true??
-                            if(ds.get("username") == null)
-                                username = "error";
-                            else
-                                username = ""+ ds.get("username");
-                            if(ds.get("type") == null)
-                                type = "error";
-                            else
-                                type = ""+ ds.get("type");
-                            if(ds.get("name") == null)
-                                name = "error";
-                            else
-                                name = ""+ ds.get("name");
-                            if(ds.get("points") == null)
-                                points = "error";
-                            else
-                                points = "" + ds.get("points");
-                            if(ds.get("password") == null)
-                                pass = "error";
-                            else
-                                pass = "" + ds.get("password");
-
-                            //update profile
-                            if(username.equals("error"))
-                                textView3.setText("not set");
-                            else
-                                textView3.setText(username);
-                            if(name.equals("error"))
-                                textView2.setText("not set");
-                            else
-                                textView2.setText(name);
-                            //DO: how to set the spinner??????
-                            /*if(type.equals("error"))
-                                textView4.setText("not set");
-                            else
-                                textView4.setText(type);*/
-                            if(points.equals("error"))
-                                pointsTextView.setText("0");
-                            else
-                                pointsTextView.setText(points);
-                        }
-                    }
-                });
     }
 
     public void updateInfo(View vi)
     {
         //get input from user
-        String username = usernameInput.getText().toString();
+        String email = emailInput.getText().toString();
         String name = nameInput.getText().toString();
         //DO: GET SPINNER INFO!
         //String type = typeInput.getText().toString();
-        String password = passInput.getText().toString();
 
         //if all EditTexts are complete, update database
 
         //DO: check type
-        //if(!password.isEmpty() && !name.isEmpty() && !type.isEmpty() && !username.isEmpty())
-        if(!password.isEmpty() && !name.isEmpty() && !username.isEmpty())
+        //if(  !name.isEmpty() && !type.isEmpty() && !username.isEmpty())
+        if(!name.isEmpty() && !email.isEmpty())
         {
             FirebaseUser currUser = mAuth.getCurrentUser();
 
             //update database with new information
-            firestore.collection("users/students/y12").document(currUser.getEmail())
+            firestore.collection("users/students/y12").document(userID)
                     .update("name", name);
-            firestore.collection("users/students/y12").document(currUser.getEmail())
-                    .update("password", password);
-            firestore.collection("users/students/y12").document(currUser.getEmail())
-                    .update("username", username);
+            firestore.collection("users/students/y12").document(userID)
+                    .update("email", email);
 
             //DO: update type
             /*firestore.collection("users/students/y12").document(currUser.getEmail())
@@ -193,9 +117,8 @@ public class Profile extends Fragment {
 
             //display new profile information
             textView3.setText(type);
-            textView4.setText(password);
             textView2.setText(name);
-            textView1.setText(username);
+            textView1.setText(email);
 
             Toast messageToUser = Toast.makeText(getActivity(), "Success", Toast.LENGTH_LONG);
             messageToUser.show();
@@ -212,6 +135,77 @@ public class Profile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        /* //********* textView1 = (TextView)getView().findViewById(R.id.email);
+        textView2 = (TextView)getView().findViewById(R.id.name);
+        textView3 = (TextView)getView().findViewById(R.id.type);
+        textView5 = (TextView)getView().findViewById(R.id.points);
+
+        nameInput = (EditText) getView().findViewById(R.id.nameInput);
+        emailInput = (EditText) getView().findViewById(R.id.usernameInput);
+
+        firestore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currUser = mAuth.getCurrentUser();
+        String email = currUser.getEmail();
+
+        uemail = "error";
+        name = "error";
+        type = "error";
+        points = "error";
+
+
+        //DO: is this the right collection part
+        firestore.collection("users/students/y12").whereEqualTo("email", email).get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
+                {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        for (DocumentSnapshot ds : task.getResult().getDocuments())
+                        {
+                            userID = "" + ds.get("uid");
+                            //get information from profile
+
+                            //DO: are the variable type name true??
+                            if(ds.get("email") == null)
+                                uemail = "error";
+                            else
+                                uemail = ""+ ds.get("email");
+                            if(ds.get("usertype") == null)
+                                type = "error";
+                            else
+                                type = ""+ ds.get("usertype");
+                            if(ds.get("name") == null)
+                                name = "error";
+                            else
+                                name = ""+ ds.get("name");
+                            if(ds.get("balance") == null)
+                                points = "error";
+                            else
+                                points = "" + ds.get("balance");
+
+
+                            //update profile
+                            if(uemail.equals("error"))
+                                textView1.setText("not set");
+                            else
+                                textView1.setText(uemail);
+                            if(name.equals("error"))
+                                textView2.setText("not set");
+                            else
+                                textView2.setText(name);
+                            //DO: how to set the spinner??????
+                            /*if(type.equals("error"))
+                                textView3.setText("not set");
+                            else
+                                textView3.setText(type);*/
+                /*      //****      if(points.equals("error"))
+                                textView5.setText("0");
+                            else
+                                textView5.setText(points);
+                        }
+                    }
+                });  //********* */
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }

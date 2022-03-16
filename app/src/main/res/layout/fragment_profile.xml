@@ -14,8 +14,8 @@
             android:id="@+id/typeTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="46dp"
-            android:layout_marginBottom="35dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="37dp"
             android:text="Type:"
             app:layout_constraintBottom_toTopOf="@+id/greenPointsTag"
             app:layout_constraintStart_toStartOf="parent" />
@@ -24,7 +24,7 @@
             android:id="@+id/nameTag2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="47dp"
             android:layout_marginBottom="29dp"
             android:text="Name:"
             app:layout_constraintBottom_toTopOf="@+id/typeTag"
@@ -38,38 +38,21 @@
             android:layout_marginTop="28dp"
             android:ems="10"
             android:fontFamily="sans-serif-medium"
-            android:hint="Username"
+            android:hint="Email"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:textAlignment="center"
             android:textColor="#3F51B5"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/username"
+            app:layout_constraintStart_toEndOf="@+id/email"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <EditText
-            android:id="@+id/passwordInput"
-            android:layout_width="184dp"
-            android:layout_height="53dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:fontFamily="sans-serif-medium"
-            android:hint="Password"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textColor="#3F51B5"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/password2"
-            app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
 
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="169dp"
             android:layout_height="50dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="375dp"
             android:ems="10"
             android:fontFamily="sans-serif-medium"
             android:hint="Name"
@@ -78,71 +61,48 @@
             android:textAlignment="center"
             android:textColor="#3F51B5"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/name"
-            app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/name" />
 
         <TextView
-            android:id="@+id/usernameTag"
+            android:id="@+id/emailTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="46dp"
-            android:layout_marginBottom="32dp"
-            android:text="Username:"
-            app:layout_constraintBottom_toTopOf="@+id/passwordTag"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/passwordTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginBottom="40dp"
-            android:text="Password:"
+            android:layout_marginBottom="33dp"
+            android:text="Email:"
             app:layout_constraintBottom_toTopOf="@+id/nameTag2"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="36dp"
-            android:text="username"
-            app:layout_constraintBottom_toTopOf="@+id/password2"
-            app:layout_constraintStart_toEndOf="@+id/usernameTag" />
+            android:text="email"
+            app:layout_constraintBottom_toTopOf="@+id/name"
+            app:layout_constraintStart_toEndOf="@+id/emailTag" />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="53dp"
-            android:layout_marginTop="37dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="31dp"
             android:text="name"
-            app:layout_constraintStart_toEndOf="@+id/nameTag2"
-            app:layout_constraintTop_toBottomOf="@+id/password2" />
+            app:layout_constraintBottom_toTopOf="@+id/type"
+            app:layout_constraintStart_toEndOf="@+id/nameTag2" />
 
         <TextView
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="29dp"
-            android:layout_marginBottom="308dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginBottom="35dp"
             android:text="type"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/typeTag"
-            app:layout_constraintTop_toBottomOf="@+id/name"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/password2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="105dp"
-            android:text="password"
-            app:layout_constraintStart_toEndOf="@+id/passwordTag"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintBottom_toTopOf="@+id/greenPointsTag"
+            app:layout_constraintStart_toEndOf="@+id/typeTag" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -158,10 +118,10 @@
 
         <Spinner
             android:id="@+id/typeSpinner"
-            android:layout_width="129dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="37dp"
+            android:layout_width="176dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="56dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
@@ -169,8 +129,8 @@
             android:id="@+id/greenPointsTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="47dp"
-            android:layout_marginBottom="234dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="292dp"
             android:text="Green Points:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

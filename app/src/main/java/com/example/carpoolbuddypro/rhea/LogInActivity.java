@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.carpoolbuddypro.MainActivity;
 import com.example.carpoolbuddypro.R;
+import com.example.carpoolbuddypro.audrey.TestingActivity;
 import com.example.carpoolbuddypro.silvia.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -131,7 +132,7 @@ public class LogInActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser currUser) {
 
         if (currUser != null) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, TestingActivity.class);
             startActivity(intent);
         }
 
