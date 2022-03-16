@@ -6,28 +6,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import com.example.carpoolbuddypro.R;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import com.example.carpoolbuddypro.Myriam.NewVehicleFragment;
-import com.example.carpoolbuddypro.Myriam.OneFragment;
 import com.example.carpoolbuddypro.Myriam.Profile;
-import com.example.carpoolbuddypro.Myriam.TwoFragment;
 import com.example.carpoolbuddypro.Myriam.YourVehicleFragment;
-import com.example.carpoolbuddypro.R;
 import com.example.carpoolbuddypro.audrey.AvailableVehiclesFragment;
-import com.example.carpoolbuddypro.silvia.AddVehicleFragment;
 //import com.example.carpoolbuddypro.silvia.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.ChatFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class TestingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -100,12 +89,12 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
             case R.id.nav_profile: {
                 System.out.println("hey");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new OneFragment()).commit();
+                        new Profile()).commit();
                 break;
             }
             case R.id.nav_yourvehicles:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TwoFragment()).commit();
+                        new YourVehicleFragment()).commit();
                 break;
             case R.id.nav_newvehicles:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
