@@ -38,6 +38,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
     LocationManager locationManager;
     LocationListener locationListener;
     LatLng userLatLng;
+    Location location;
 
 
 
@@ -85,11 +86,26 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
             };
             askLocation();
         }
+
         private void askLocation()
         {
             Dexter.withActivity(getActivity()).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
                 @Override
-                public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse)
+                {
+                    if (ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getBaseContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                        return;
+                    }else{
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+                    }
+                    try
+                    {
+
+                    }
+                    catch (SecurityException e)
+                    {
+                    }
 
                 }
 
