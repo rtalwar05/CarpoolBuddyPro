@@ -82,8 +82,11 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
         });*/
     }
 
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        System.out.println("click!");
         switch(item.getItemId())
         {
             case R.id.nav_profile: {
@@ -141,6 +144,7 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
 
     @Override
     public void onBackPressed() {
+        System.out.println("Close!");
         if(drawer.isDrawerOpen(GravityCompat.START))
         {
             drawer.closeDrawer(GravityCompat.START);
