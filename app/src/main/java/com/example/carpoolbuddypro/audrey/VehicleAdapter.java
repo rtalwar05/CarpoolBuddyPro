@@ -8,16 +8,28 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carpoolbuddypro.R;
+import com.example.carpoolbuddypro.silvia.Vehicle;
 
 import java.util.ArrayList;
 
 public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
 
-    ArrayList<String> mData;
+    private ArrayList<Vehicle> vehicleArrayList;
+    private OnItemClickListener mListener;
 
-    public VehicleAdapter(ArrayList data)
+    public interface OnItemClickListener
     {
-        mData = data;
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
+        mListener = listener;
+    }
+
+    public VehicleAdapter(ArrayList<Vehicle> data)
+    {
+        vehicleArrayList = data;
     }
 
     @NonNull
@@ -34,13 +46,16 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull VehicleViewHolder holder, int position)
     {
-        holder.nameText.setText(mData.get(position));
-        holder.statusText.setText("set later");
+//        String ownerString  = vehicleArrayList.get(position).getOwner();
+//        String capacityString = vehicleArrayList.get(position).getCapacity().toString();
+//
+//        holder.ownerTextViewAV.setText(ownerString);
+//        holder.capacityTextViewAV.setText(capacityString);
     }
 
     @Override
     public int getItemCount()
     {
-        return mData.size();
+        return vehicleArrayList.size();
     }
 }

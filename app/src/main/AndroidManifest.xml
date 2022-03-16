@@ -35,7 +35,7 @@
 <!--            android:value="@string/google_maps_key" />-->
 
         <activity
-            android:name=".audrey.TestingActivity"
+            android:name=".TestingActivity"
             android:theme = "@style/Theme.CarpoolBuddyPro.NoActionBar"
             android:exported="true" />
         <activity

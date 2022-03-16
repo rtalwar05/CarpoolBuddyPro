@@ -1,4 +1,4 @@
-package com.example.carpoolbuddypro.audrey;
+package com.example.carpoolbuddypro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.example.carpoolbuddypro.R;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -22,6 +23,7 @@ import com.example.carpoolbuddypro.Myriam.Profile;
 import com.example.carpoolbuddypro.Myriam.TwoFragment;
 import com.example.carpoolbuddypro.Myriam.YourVehicleFragment;
 import com.example.carpoolbuddypro.R;
+import com.example.carpoolbuddypro.audrey.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.AddVehicleFragment;
 //import com.example.carpoolbuddypro.silvia.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.ChatFragment;

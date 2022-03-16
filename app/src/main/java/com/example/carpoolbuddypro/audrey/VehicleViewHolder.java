@@ -10,14 +10,14 @@ import com.example.carpoolbuddypro.R;
 
 public class VehicleViewHolder extends RecyclerView.ViewHolder {
 
-    protected TextView nameText;
-    protected TextView statusText;
+    protected TextView ownerTextView;
+    protected TextView capacityTextView;
 
     public VehicleViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        nameText = itemView.findViewById(R.id.nameTextView);
-        statusText = itemView.findViewById(R.id.statusTextView);
+        ownerTextView = itemView.findViewById(R.id.ownerTextViewAV);
+        capacityTextView = itemView.findViewById(R.id.capacityTextViewAV);
     }
 
 

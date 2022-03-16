@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/availableVehiclesFragment"
     tools:context=".audrey.AvailableVehiclesFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,11 +12,11 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/availableVehiclestextView"
+            android:id="@+id/availableVehiclesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Available Vehicles"
+            android:text="@string/available_vehicles"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -23,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/vehiclesRecyclerView"
+            android:id="@+id/availableVehiclesRecyclerView"
             android:layout_width="409dp"
             android:layout_height="673dp"
             android:layout_marginStart="8dp"
@@ -33,6 +34,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/availableVehiclestextView" />
+            app:layout_constraintTop_toBottomOf="@+id/availableVehiclesTextView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
