@@ -7,11 +7,11 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="available_vehicles">Available Vehicles</string>
     <string-array name="energy">
         <item>Electric</item>
         <item>Hybrid</item>

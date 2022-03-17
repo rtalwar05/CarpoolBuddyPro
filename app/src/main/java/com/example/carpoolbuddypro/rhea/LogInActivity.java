@@ -2,6 +2,9 @@ package com.example.carpoolbuddypro.rhea;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.carpoolbuddypro.MainActivity;
 import com.example.carpoolbuddypro.R;
+import com.example.carpoolbuddypro.TestingActivity;
+import com.example.carpoolbuddypro.audrey.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,7 +44,6 @@ public class LogInActivity extends AppCompatActivity {
 
         emailField = findViewById(R.id.emailEditText);
         passwordField = findViewById(R.id.passwordEditText);
-
     }
 
     @Override
@@ -47,6 +51,13 @@ public class LogInActivity extends AppCompatActivity {
         super.onStart();
     }
 
+    private void replaceFragment(Fragment fragment)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit();
+    }
 
     /**
      * This method takes the user's email and password and log into their already existing account.
@@ -131,17 +142,8 @@ public class LogInActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser currUser) {
 
         if (currUser != null) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, TestingActivity.class);
             startActivity(intent);
         }
-
     }
-
-
-
-
-
-
-
-
 }
