@@ -14,28 +14,22 @@
             android:id="@+id/typeTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="37dp"
             android:text="Type:"
-            app:layout_constraintBottom_toTopOf="@+id/greenPointsTag"
-            app:layout_constraintStart_toStartOf="parent" />
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="376dp" />
 
         <TextView
             android:id="@+id/nameTag2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="47dp"
-            android:layout_marginBottom="29dp"
             android:text="Name:"
-            app:layout_constraintBottom_toTopOf="@+id/typeTag"
-            app:layout_constraintStart_toStartOf="parent" />
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="317dp" />
 
         <EditText
             android:id="@+id/usernameInput"
             android:layout_width="172dp"
             android:layout_height="51dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="28dp"
             android:ems="10"
             android:fontFamily="sans-serif-medium"
             android:hint="Email"
@@ -44,15 +38,13 @@
             android:textAlignment="center"
             android:textColor="#3F51B5"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/email"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            tools:layout_editor_absoluteX="179dp"
+            tools:layout_editor_absoluteY="243dp" />
 
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="169dp"
             android:layout_height="50dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginBottom="375dp"
             android:ems="10"
             android:fontFamily="sans-serif-medium"
             android:hint="Name"
@@ -61,48 +53,42 @@
             android:textAlignment="center"
             android:textColor="#3F51B5"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/name" />
+            tools:layout_editor_absoluteX="179dp"
+            tools:layout_editor_absoluteY="307dp" />
 
         <TextView
             android:id="@+id/emailTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="46dp"
-            android:layout_marginBottom="33dp"
+            android:layout_marginTop="264dp"
             android:text="Email:"
-            app:layout_constraintBottom_toTopOf="@+id/nameTag2"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/text_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="36dp"
             android:text="email"
-            app:layout_constraintBottom_toTopOf="@+id/name"
-            app:layout_constraintStart_toEndOf="@+id/emailTag" />
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="261dp" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="31dp"
             android:text="name"
-            app:layout_constraintBottom_toTopOf="@+id/type"
-            app:layout_constraintStart_toEndOf="@+id/nameTag2" />
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="317dp" />
 
         <TextView
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginBottom="35dp"
             android:text="type"
-            app:layout_constraintBottom_toTopOf="@+id/greenPointsTag"
-            app:layout_constraintStart_toEndOf="@+id/typeTag" />
+            tools:layout_editor_absoluteX="114dp"
+            tools:layout_editor_absoluteY="376dp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -130,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginBottom="292dp"
+            android:layout_marginBottom="248dp"
             android:text="Green Points:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -139,11 +125,11 @@
             android:id="@+id/points"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="83dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginBottom="72dp"
             android:text="points"
-            app:layout_constraintStart_toEndOf="@+id/greenPointsTag"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintStart_toEndOf="@+id/greenPointsTag" />
 
         <Button
             android:id="@+id/button"
@@ -156,5 +142,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="6dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

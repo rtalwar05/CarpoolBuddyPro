@@ -12,6 +12,12 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
     <string name="available_vehicles">Available Vehicles</string>
+    <string-array name="types">
+        <item>Student</item>
+        <item>Alumni</item>
+        <item>Parent</item>
+        <item>Staff</item>
+    </string-array>
     <string-array name="energy">
         <item>Electric</item>
         <item>Hybrid</item>

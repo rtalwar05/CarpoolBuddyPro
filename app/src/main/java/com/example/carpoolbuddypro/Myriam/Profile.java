@@ -45,6 +45,8 @@ public class Profile extends Fragment {
     private String points;
     private String userID;
 
+    View root;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -136,13 +138,23 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        /* //********* textView1 = (TextView)getView().findViewById(R.id.email);
-        textView2 = (TextView)getView().findViewById(R.id.name);
-        textView3 = (TextView)getView().findViewById(R.id.type);
-        textView5 = (TextView)getView().findViewById(R.id.points);
+        root = inflater.inflate(R.layout.fragment_profile,null);
 
-        nameInput = (EditText) getView().findViewById(R.id.nameInput);
-        emailInput = (EditText) getView().findViewById(R.id.usernameInput);
+
+        /*textView1 = (TextView)root.findViewById(R.id.email);
+        textView1.setText("t");
+        textView2 = root.findViewById(R.id.name);
+        textView3 = root.findViewById(R.id.type);
+        textView5 = root.findViewById(R.id.points);*/
+
+        TextView userEmail = (TextView) root.findViewById(R.id.text_email);
+        TextView userName = (TextView) root.findViewById(R.id.text_name);
+        //TextView userType = (TextView) root.findViewById(R.id.ty);
+        TextView userPoints = (TextView) root.findViewById(R.id.points);
+
+
+        nameInput = root.findViewById(R.id.nameInput);
+        emailInput = root.findViewById(R.id.usernameInput);
 
         firestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -155,7 +167,7 @@ public class Profile extends Fragment {
         points = "error";
 
 
-        //DO: is this the right collection part
+        //DO: is this the right collection path
         firestore.collection("users/students/y12").whereEqualTo("email", email).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
                 {
@@ -187,25 +199,46 @@ public class Profile extends Fragment {
 
                             //update profile
                             if(uemail.equals("error"))
-                                textView1.setText("not set");
+                            {
+                                System.out.println("email is not set");
+                                userEmail.setText("not set");
+                            }
                             else
-                                textView1.setText(uemail);
+                                {
+                                    System.out.println("email = " + uemail);
+                                    userEmail.setText(uemail);
+                                }
                             if(name.equals("error"))
-                                textView2.setText("not set");
+                            {
+                                System.out.println("name is not set");
+                                userName.setText("not set");
+                            }
                             else
-                                textView2.setText(name);
+                                {
+                                    System.out.println("name = " + name);
+                                    userName.setText(name);
+                                }
                             //DO: how to set the spinner??????
                             /*if(type.equals("error"))
                                 textView3.setText("not set");
                             else
                                 textView3.setText(type);*/
-                /*      //****      if(points.equals("error"))
-                                textView5.setText("0");
+                            if(points.equals("error"))
+                            {
+                                System.out.println("points = not set");
+                                userPoints.setText("0");
+                            }
                             else
-                                textView5.setText(points);
+                                {
+                                    System.out.println("points = " + points);
+                                    userPoints.setText(points);
+                                }
                         }
                     }
-                });  //********* */
+                });
+
+//        textView1.setText("THIS IS A TEST");
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
