@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -35,8 +34,6 @@ public class LogInActivity extends AppCompatActivity {
     private EditText emailField;
     private EditText passwordField;
 
-    private Button toAvailableVehiclesButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +44,6 @@ public class LogInActivity extends AppCompatActivity {
 
         emailField = findViewById(R.id.emailEditText);
         passwordField = findViewById(R.id.passwordEditText);
-
-        toAvailableVehiclesButton = findViewById(R.id.availableVehiclesButton);
-        toAvailableVehiclesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new AvailableVehiclesFragment());
-            }
-        });
     }
 
     @Override
@@ -158,12 +147,4 @@ public class LogInActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
-
-
-
-
 }
