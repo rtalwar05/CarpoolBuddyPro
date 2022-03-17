@@ -145,6 +145,5 @@ public class LogInActivity extends AppCompatActivity {
             Intent intent = new Intent(this, TestingActivity.class);
             startActivity(intent);
         }
-
     }
 }
