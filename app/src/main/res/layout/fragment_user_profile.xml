@@ -16,6 +16,16 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/buttonLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Log out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/points2"
         android:layout_width="wrap_content"
@@ -65,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="52dp"
         android:text="Name:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailTag2" />
@@ -74,8 +84,8 @@
         android:id="@+id/text_name3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="336dp"
         android:text="name"
         app:layout_constraintStart_toEndOf="@+id/nameTag3"
         app:layout_constraintTop_toTopOf="parent" />
@@ -84,7 +94,7 @@
         android:id="@+id/nameInput2"
         android:layout_width="169dp"
         android:layout_height="50dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="36dp"
         android:ems="10"
         android:fontFamily="sans-serif-medium"
@@ -101,13 +111,13 @@
         android:id="@+id/text_email4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginBottom="34dp"
         android:text="email"
         app:layout_constraintBottom_toTopOf="@+id/text_name3"
         app:layout_constraintStart_toEndOf="@+id/emailTag2"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.736" />
 
     <TextView
         android:id="@+id/emailTag2"

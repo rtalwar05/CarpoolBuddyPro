@@ -1,5 +1,6 @@
 package com.example.carpoolbuddypro.Myriam;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.carpoolbuddypro.R;
+import com.example.carpoolbuddypro.rhea.LogInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +45,7 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
     String uType;
 
     Button b;
+    Button logoutB;
 
     private EditText emailInput;
     private EditText nameInput;
@@ -56,6 +59,9 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
 
         b = (Button)root.findViewById(R.id.button3);
         b.setOnClickListener(this);
+
+        logoutB = (Button)root.findViewById(R.id.buttonLog);
+        logoutB.setOnClickListener(this);
 
 
         TextView userEmail = (TextView) root.findViewById(R.id.text_email4);
@@ -222,6 +228,16 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
         {
             case R.id.button3:
                 updateInfo();
+                break;
+            case R.id.buttonLog:
+            {
+                mAuth.signOut();
+                Intent intent = new Intent(getActivity(), LogInActivity.class);
+                startActivity(intent);
+                System.out.println("signing out");
+                break;
+            }
+                //logout
         }
     }
 }

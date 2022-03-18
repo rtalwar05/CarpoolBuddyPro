@@ -12,11 +12,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.carpoolbuddypro.Myriam.NewVehicleFragment;
-import com.example.carpoolbuddypro.Myriam.Profile;
 import com.example.carpoolbuddypro.Myriam.UserProfileFragment;
 import com.example.carpoolbuddypro.Myriam.YourVehicleFragment;
 import com.example.carpoolbuddypro.R;
-import com.example.carpoolbuddypro.audrey.AvailableVehiclesFragment;
 //import com.example.carpoolbuddypro.silvia.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.ChatFragment;
 import com.google.android.material.navigation.NavigationView;
