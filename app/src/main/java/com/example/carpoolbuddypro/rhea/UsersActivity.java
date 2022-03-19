@@ -30,13 +30,20 @@ public class UsersActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding = ActivityUsersBinding.inflate(getLayoutInflater());
+        setListeners();
+        getUsers();
 
 
 
     }
 
-    private void getUsers ()
-    {
+//    private void setListeners() {
+//        binding.imageBack.setOnDragListener(v -> onBackPressed());
+//
+//    }
+
+
+    private void getUsers () {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currUser = auth.getCurrentUser();
 
@@ -47,26 +54,35 @@ public class UsersActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     loading(false);
                     String currentUserId = currUser.getUid();
-                    if (task.isSuccessful() && task.getResult() != null)
-                    {
+                    if (task.isSuccessful() && task.getResult() != null) {
                         ArrayList<User> users = new ArrayList<>();
-                        for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult())
-                        {
-                            if (currentUserId.equals(queryDocumentSnapshot.getId())){
+                        for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
+                            if (currentUserId.equals(queryDocumentSnapshot.getId())) {
                                 continue;
                             }
                             com.example.carpoolbuddypro.silvia.User user = new com.example.carpoolbuddypro.silvia.User();
-//                            user.setName (QueryDocumentSnapshot.getString("Name"));
-//                            user.setEmail(QueryDocumentSnapshot.getString("Email"));
-
-
+                            user.setName(queryDocumentSnapshot.getString("Name"));
+                            user.setEmail(queryDocumentSnapshot.getString("Email"));
+                            user.setToken(queryDocumentSnapshot.getString("Token"));
 
                         }
+
+                        if (users.size() > 0) {
+                            UsersAdapter usersAdapter = new UsersAdapter(users);
+                            binding.usersRecyclerView.setAdapter();
+                            binding.usersRecyclerView.setVisibility(View.VISIBLE);
+                        } else {
+                            showErrorMessage();
+
+                        }
+                    } else {
+                        showErrorMessage();
                     }
-                } );
-
-
+                });
     }
+
+
+
 
 
     private void showErrorMessage ()
