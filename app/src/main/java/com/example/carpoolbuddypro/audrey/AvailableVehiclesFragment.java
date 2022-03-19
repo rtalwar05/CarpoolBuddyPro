@@ -27,17 +27,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AvailableVehiclesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AvailableVehiclesFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
     private RecyclerView vehicleRecyclerView;
     private VehicleAdapter vehicleAdapter;
     private ArrayList<Vehicle> vehiclesArrayList;
@@ -50,27 +42,40 @@ public class AvailableVehiclesFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static AvailableVehiclesFragment newInstance(String param1, String param2) {
-        AvailableVehiclesFragment fragment = new AvailableVehiclesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
         firestore = FirebaseFirestore.getInstance();
         vehiclesArrayList = new ArrayList<>();
 
-        getDataFromFireStore();
         vehicleAdapter = new VehicleAdapter(vehiclesArrayList);
+        getDataFromFireStore();
+        Log.d(TAG, "adapter size: " + vehicleAdapter.getItemCount());
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState)
+    {
+        rootView = inflater.inflate(R.layout.fragment_available_vehicles, container, false);
+
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        vehicleRecyclerView = rootView.findViewById(R.id.availableRecView);
+
+        LinearLayoutManager llm = new LinearLayoutManager(this.getContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        vehicleRecyclerView.setLayoutManager(llm);
+        vehicleRecyclerView.setAdapter(vehicleAdapter);
+
+        vehicleAdapter.notifyDataSetChanged();
+        System.out.println("notify");
 
         vehicleAdapter.setOnItemClickListener(new VehicleAdapter.OnItemClickListener() {
             @Override
@@ -90,24 +95,6 @@ public class AvailableVehiclesFragment extends Fragment {
                 transaction.commit();
             }
         });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
-        rootView = inflater.inflate(R.layout.fragment_available_vehicles, container, false);
-
-        return rootView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        vehicleRecyclerView = rootView.findViewById(R.id.availableRecView);
-        vehicleRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
     }
 
     public void getDataFromFireStore()

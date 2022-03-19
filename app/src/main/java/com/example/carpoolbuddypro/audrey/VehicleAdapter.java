@@ -49,8 +49,8 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
         String ownerString  = vehicleArrayList.get(position).getOwner();
         String capacityString = String.valueOf(vehicleArrayList.get(position).getCapacity());
 
-        holder.ownerTextView.setText(ownerString);
-        holder.capacityTextView.setText(capacityString);
+        holder.ownerTextView.setText("owner: " + ownerString);
+        holder.capacityTextView.setText("capacity: " + capacityString);
     }
 
     @Override
