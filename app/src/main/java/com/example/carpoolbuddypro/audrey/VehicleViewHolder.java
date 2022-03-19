@@ -30,3 +30,4 @@ public class VehicleViewHolder extends RecyclerView.ViewHolder implements View.O
         onItemClickListener.onItemClick(getAdapterPosition());
     }
 }
+

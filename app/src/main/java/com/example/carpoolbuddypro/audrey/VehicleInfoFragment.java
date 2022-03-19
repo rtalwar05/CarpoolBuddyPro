@@ -65,5 +65,4 @@ public class VehicleInfoFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vehicle_info, container, false);
     }
-
 }

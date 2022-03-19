@@ -149,3 +149,4 @@ public class AvailableVehiclesFragment extends Fragment implements VehicleAdapte
         transaction.commit();
     }
 }
+
