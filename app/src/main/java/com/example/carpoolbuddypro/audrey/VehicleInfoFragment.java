@@ -43,7 +43,12 @@ public class VehicleInfoFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState)
+    {
         licensePlateTextView = getView().findViewById(R.id.licensePlateTextView);
         ownerTextView = getView().findViewById(R.id.ownerTextView);
         modelTextView = getView().findViewById(R.id.modelTextView);
@@ -53,12 +58,7 @@ public class VehicleInfoFragment extends Fragment {
         bookVehicleButton = getView().findViewById(R.id.bookVehicleButton);
         chatWithDriverButton = getView().findViewById(R.id.chatWithDriverButton);
         seePickupLocationButton = getView().findViewById(R.id.seePickupLocationButton);
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
         Bundle bundle = this.getArguments();
         String licensePlate = bundle.getString("licensePlate");
 

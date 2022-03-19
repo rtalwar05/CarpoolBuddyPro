@@ -28,7 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 
 
-public class AvailableVehiclesFragment extends Fragment {
+public class AvailableVehiclesFragment extends Fragment implements VehicleAdapter.OnItemClickListener {
 
     private RecyclerView vehicleRecyclerView;
     private VehicleAdapter vehicleAdapter;
@@ -49,9 +49,8 @@ public class AvailableVehiclesFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         vehiclesArrayList = new ArrayList<>();
 
-        vehicleAdapter = new VehicleAdapter(vehiclesArrayList);
+        vehicleAdapter = new VehicleAdapter(vehiclesArrayList, this);
         getDataFromFireStore();
-        Log.d(TAG, "adapter size: " + vehicleAdapter.getItemCount());
     }
 
     @Override
@@ -75,26 +74,25 @@ public class AvailableVehiclesFragment extends Fragment {
         vehicleRecyclerView.setAdapter(vehicleAdapter);
 
         vehicleAdapter.notifyDataSetChanged();
-        System.out.println("notify");
 
-        vehicleAdapter.setOnItemClickListener(new VehicleAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                vehicleClicked = vehiclesArrayList.get(position);
-                Bundle bundle = new Bundle();
-                bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
-
-                VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
-                vehicleInfoFragment.setArguments(bundle); //send bundle with info
-
-                FragmentManager fragmentManager = getParentFragment().getChildFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.setReorderingAllowed(true);
-                transaction.addToBackStack(null);
-                transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
-                transaction.commit();
-            }
-        });
+//        vehicleAdapter.setOnItemClickListener(new VehicleAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(int position) {
+//                vehicleClicked = vehiclesArrayList.get(position);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
+//
+//                VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
+//                vehicleInfoFragment.setArguments(bundle); //send bundle with info
+//
+//                FragmentManager fragmentManager = getParentFragment().getChildFragmentManager();
+//                FragmentTransaction transaction = fragmentManager.beginTransaction();
+//                transaction.setReorderingAllowed(true);
+//                transaction.addToBackStack(null);
+//                transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
+//                transaction.commit();
+//            }
+//        });
     }
 
     public void getDataFromFireStore()
@@ -122,6 +120,7 @@ public class AvailableVehiclesFragment extends Fragment {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
                             vehicleRecyclerView.setAdapter(vehicleAdapter); //info into recycler view
+                            Log.d(TAG, "adapter size: " + vehicleAdapter.getItemCount());
                         }
                         else
                         {
@@ -129,5 +128,24 @@ public class AvailableVehiclesFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Log.d(TAG, "onItemClick: clickedAVRecView");
+
+        vehicleClicked = vehiclesArrayList.get(position);
+        Bundle bundle = new Bundle();
+        bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
+
+        VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
+        vehicleInfoFragment.setArguments(bundle); //send bundle with info
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setReorderingAllowed(true);
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
+        transaction.commit();
     }
 }
