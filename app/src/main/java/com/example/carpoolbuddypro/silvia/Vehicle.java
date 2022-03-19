@@ -105,4 +105,5 @@ public class Vehicle {
     public void setGreen(boolean green) {
         this.isGreen = green;
     }
+
 }
