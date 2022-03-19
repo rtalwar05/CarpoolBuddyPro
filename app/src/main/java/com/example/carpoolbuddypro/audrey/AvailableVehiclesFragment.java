@@ -134,7 +134,7 @@ public class AvailableVehiclesFragment extends Fragment {
                                 }
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
-                            vehicleRecyclerView.setAdapter(vehicleAdapter);
+                            vehicleRecyclerView.setAdapter(vehicleAdapter); //info into recycler view
                         }
                         else
                         {

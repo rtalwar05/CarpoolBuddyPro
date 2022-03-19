@@ -9,13 +9,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 
-import com.example.carpoolbuddypro.Myriam.NewVehicleFragment;
 import com.example.carpoolbuddypro.Myriam.UserProfileFragment;
 import com.example.carpoolbuddypro.Myriam.YourVehicleFragment;
 import com.example.carpoolbuddypro.R;
 //import com.example.carpoolbuddypro.silvia.AvailableVehiclesFragment;
+import com.example.carpoolbuddypro.silvia.AddVehicleFragment;
 import com.example.carpoolbuddypro.silvia.ChatFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,9 +22,6 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
     //implements NavigationView.OnNavigationItemSelectedListener
 
     private DrawerLayout drawer;
-
-    Button fragmentOneButton;
-    Button fragmentTwoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +67,7 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
                 break;
             case R.id.nav_newvehicles:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new NewVehicleFragment()).commit();
+                        new AddVehicleFragment()).commit();
                 break;
             case R.id.nav_chat:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
