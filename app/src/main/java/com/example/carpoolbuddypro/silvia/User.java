@@ -75,6 +75,12 @@ public class User
         this.greenpoints = greenpoints;
     }
 
+    public String getToken () {return token;}
+
+    public void setToken (String token) {this.token = token;}
+
+
+
     private String name;
     private String email;
     private double balance;
@@ -82,6 +88,7 @@ public class User
     private double pricemult;
     private ArrayList<String> ownveh;
     private int greenpoints;
+    private String token;
 
     public User (String uid, String email )
     {
@@ -98,7 +105,9 @@ public class User
         this.ownveh = ownveh;
         this.balance = balance;
         this.greenpoints = greenpoints;
+        token = null;
     }
+
 
 
 
