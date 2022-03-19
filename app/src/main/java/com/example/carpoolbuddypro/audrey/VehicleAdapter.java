@@ -59,3 +59,4 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
         return vehicleArrayList.size();
     }
 }
+

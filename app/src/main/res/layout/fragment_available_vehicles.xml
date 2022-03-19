@@ -15,7 +15,7 @@
             android:id="@+id/availableVehiclesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="25dp"
             android:text="@string/available_vehicles"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"

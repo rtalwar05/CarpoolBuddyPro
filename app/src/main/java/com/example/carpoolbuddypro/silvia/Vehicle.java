@@ -106,5 +106,4 @@ public class Vehicle {
         this.isGreen = green;
     }
 
-
 }
