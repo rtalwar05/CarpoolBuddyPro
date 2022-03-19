@@ -23,6 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -40,10 +42,12 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
     private TextInputEditText bigmod;
     private TextInputEditText bigcap;
     private TextInputEditText bigbase;
+    private TextInputEditText bigOwner;
     private Button opened;
     private Button green;
     private User curuser;
     private String lisplate;
+    private String ownerString;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -91,12 +95,14 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
         bigmod = (TextInputEditText) getView().findViewById(R.id.model);
         bigbase = (TextInputEditText) getView().findViewById(R.id.baseprice);
         bigcap = (TextInputEditText) getView().findViewById(R.id.capacity);
+        bigOwner = (TextInputEditText) getView().findViewById(R.id.ownerEditText);
         select = (Spinner) getView().findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),R.array.energy, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         select.setAdapter(adapter);
         select.setOnItemSelectedListener(this);
         lisplate = bigplate.getText().toString();
+        ownerString = bigOwner.getText().toString();
     }
 
     @Override
@@ -119,6 +125,9 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
                 else
                 {
                     //toast thingy
+                    //haha i'll do it for ya
+                    Toast toast = Toast.makeText(getContext(), "error: user not added", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
             }
         });
@@ -150,7 +159,7 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
                 greenornot = false;
             }
         String energytype = select.getSelectedItem().toString();
-        Vehicle addedv = new Vehicle(lisplate, model, capac, new ArrayList<String>(), openornot, basepri, greenornot, energytype);
+        Vehicle addedv = new Vehicle(lisplate, model, capac, new ArrayList<String>(), openornot, basepri, greenornot, energytype, ownerString);
         mfStore.collection("Vehicles").document(lisplate).set(addedv);
     }
 

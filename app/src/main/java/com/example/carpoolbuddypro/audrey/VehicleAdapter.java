@@ -46,11 +46,11 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull VehicleViewHolder holder, int position)
     {
-//        String ownerString  = vehicleArrayList.get(position).getOwner();
-//        String capacityString = vehicleArrayList.get(position).getCapacity().toString();
-//
-//        holder.ownerTextViewAV.setText(ownerString);
-//        holder.capacityTextViewAV.setText(capacityString);
+        String ownerString  = vehicleArrayList.get(position).getOwner();
+        String capacityString = String.valueOf(vehicleArrayList.get(position).getCapacity());
+
+        holder.ownerTextView.setText(ownerString);
+        holder.capacityTextView.setText(capacityString);
     }
 
     @Override

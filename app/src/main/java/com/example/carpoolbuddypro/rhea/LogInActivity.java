@@ -11,12 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.carpoolbuddypro.MainActivity;
 import com.example.carpoolbuddypro.R;
-import com.example.carpoolbuddypro.TestingActivity;
+import com.example.carpoolbuddypro.audrey.TestingActivity;
 import com.example.carpoolbuddypro.audrey.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.User;
 import com.google.android.gms.tasks.OnCompleteListener;

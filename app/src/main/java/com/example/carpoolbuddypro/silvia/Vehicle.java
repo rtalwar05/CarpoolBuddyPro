@@ -12,12 +12,13 @@ public class Vehicle {
     double basePrice;
     boolean isGreen;
     String energytype;
+    String owner;
 
     public Vehicle (){}
 
     public Vehicle(String liscenseplate, String model, int capacity,
                    ArrayList<String> ridersUID, boolean open,
-                   double basePrice, boolean isGreen, String energytype) {
+                   double basePrice, boolean isGreen, String energytype, String owner) {
         this.liscenseplate = liscenseplate;
         this.model = model;
         this.capacity = capacity;
@@ -26,7 +27,15 @@ public class Vehicle {
         this.basePrice = basePrice;
         this.isGreen = isGreen;
         this.energytype = energytype;
+        this.owner = owner;
+    }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public String getEnergytype() {

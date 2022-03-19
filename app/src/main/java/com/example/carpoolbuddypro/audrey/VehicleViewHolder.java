@@ -16,8 +16,8 @@ public class VehicleViewHolder extends RecyclerView.ViewHolder {
     public VehicleViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        ownerTextView = itemView.findViewById(R.id.ownerTextViewAV);
-        capacityTextView = itemView.findViewById(R.id.capacityTextViewAV);
+        ownerTextView = itemView.findViewById(R.id.ownerTextViewRV);
+        capacityTextView = itemView.findViewById(R.id.capacityTextViewRV);
     }
 
 

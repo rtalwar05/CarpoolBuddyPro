@@ -1,4 +1,4 @@
-package com.example.carpoolbuddypro;
+package com.example.carpoolbuddypro.audrey;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,13 +9,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 
-import com.example.carpoolbuddypro.Myriam.NewVehicleFragment;
-import com.example.carpoolbuddypro.Myriam.Profile;
+import com.example.carpoolbuddypro.Myriam.UserProfileFragment;
 import com.example.carpoolbuddypro.Myriam.YourVehicleFragment;
-import com.example.carpoolbuddypro.audrey.AvailableVehiclesFragment;
+import com.example.carpoolbuddypro.R;
 //import com.example.carpoolbuddypro.silvia.AvailableVehiclesFragment;
+import com.example.carpoolbuddypro.silvia.AddVehicleFragment;
 import com.example.carpoolbuddypro.silvia.ChatFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,9 +22,6 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
     //implements NavigationView.OnNavigationItemSelectedListener
 
     private DrawerLayout drawer;
-
-    Button fragmentOneButton;
-    Button fragmentTwoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,42 +40,13 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-
-       /* Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if(savedInstanceState == null)
+        if(savedInstanceState==null)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Profile()).commit();
-            navigationView.setCheckedItem(R.id.profile);
-        }*/
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new UserProfileFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_profile);
+        }
 
-        /*fragmentOneButton = findViewById(R.id.fragmentOneButton);
-        fragmentTwoButton = findViewById(R.id.fragmentTwoButton);
-
-
-        fragmentOneButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new FragmentOne());
-            }
-        });
-
-        fragmentTwoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new FragmentTwo());
-            }
-        });*/
     }
 
 
@@ -90,9 +57,8 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
         switch(item.getItemId())
         {
             case R.id.nav_profile: {
-                System.out.println("hey");
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Profile()).commit();
+                        new UserProfileFragment()).commit();
                 break;
             }
             case R.id.nav_yourvehicles:
@@ -101,7 +67,7 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
                 break;
             case R.id.nav_newvehicles:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new NewVehicleFragment()).commit();
+                        new AddVehicleFragment()).commit();
                 break;
             case R.id.nav_chat:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
