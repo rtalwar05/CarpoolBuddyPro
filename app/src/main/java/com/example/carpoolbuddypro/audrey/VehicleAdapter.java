@@ -27,9 +27,10 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
         mListener = listener;
     }
 
-    public VehicleAdapter(ArrayList<Vehicle> data)
+    public VehicleAdapter(ArrayList<Vehicle> data, OnItemClickListener onItemClickListener)
     {
         vehicleArrayList = data;
+        mListener = onItemClickListener;
     }
 
     @NonNull
@@ -38,7 +39,7 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
     {
         View myView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vehicle_row_view, parent, false);
 
-        VehicleViewHolder holder = new VehicleViewHolder(myView);
+        VehicleViewHolder holder = new VehicleViewHolder(myView, mListener);
 
         return holder;
     }
@@ -49,8 +50,8 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
         String ownerString  = vehicleArrayList.get(position).getOwner();
         String capacityString = String.valueOf(vehicleArrayList.get(position).getCapacity());
 
-        holder.ownerTextView.setText(ownerString);
-        holder.capacityTextView.setText(capacityString);
+        holder.ownerTextView.setText("owner: " + ownerString);
+        holder.capacityTextView.setText("capacity: " + capacityString);
     }
 
     @Override
@@ -59,3 +60,4 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleViewHolder> {
         return vehicleArrayList.size();
     }
 }
+

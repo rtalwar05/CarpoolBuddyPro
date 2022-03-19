@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.carpoolbuddypro.R;
@@ -23,15 +25,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddVehicleFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     private FirebaseFirestore mfStore;
@@ -43,52 +38,24 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
     private TextInputEditText bigcap;
     private TextInputEditText bigbase;
     private TextInputEditText bigOwner;
-    private Button opened;
-    private Button green;
+    private Switch opened;
+    private CheckBox green;
     private User curuser;
     private String lisplate;
     private String ownerString;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Boolean openornot;
+    private Boolean greenornot;
 
     public AddVehicleFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddVehicleFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddVehicleFragment newInstance(String param1, String param2) {
-        AddVehicleFragment fragment = new AddVehicleFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-        opened = (Button) getView().findViewById(R.id.switch1);
-        green = (Button) getView().findViewById(R.id.checkBox);
+
+        opened = getView().findViewById(R.id.switchAddVehicle);
+        green = getView().findViewById(R.id.checkBox);
         mAuth = FirebaseAuth.getInstance();
         mfStore = FirebaseFirestore.getInstance();
         bigplate = (TextInputEditText) getView().findViewById(R.id.liscenceplatenumber);
@@ -140,24 +107,28 @@ public class AddVehicleFragment extends Fragment implements AdapterView.OnItemSe
         String model = bigmod.getText().toString();
         int capac = Integer.parseInt(bigcap.getText().toString());
         int basepri = Integer.parseInt(bigbase.getText().toString());
-        Boolean openornot;
-        Boolean greenornot;
-        if (opened.isPressed())
-        {
-            openornot = true;
-        }
-        else
-            {
-                openornot = false;
+
+        opened.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (opened.isChecked())
+                {
+                    openornot = true;
+                }
+                else
+                {
+                    openornot = false;
+                }
             }
-        if (green.isPressed())
+        });
+        if (green.isChecked())
         {
             greenornot = true;
         }
         else
-            {
-                greenornot = false;
-            }
+        {
+            greenornot = false;
+        }
         String energytype = select.getSelectedItem().toString();
         Vehicle addedv = new Vehicle(lisplate, model, capac, new ArrayList<String>(), openornot, basepri, greenornot, energytype, ownerString);
         mfStore.collection("Vehicles").document(lisplate).set(addedv);

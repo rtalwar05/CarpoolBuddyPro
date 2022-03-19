@@ -27,17 +27,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AvailableVehiclesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class AvailableVehiclesFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private String mParam1;
-    private String mParam2;
+public class AvailableVehiclesFragment extends Fragment implements VehicleAdapter.OnItemClickListener {
+
     private RecyclerView vehicleRecyclerView;
     private VehicleAdapter vehicleAdapter;
     private ArrayList<Vehicle> vehiclesArrayList;
@@ -50,46 +42,15 @@ public class AvailableVehiclesFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static AvailableVehiclesFragment newInstance(String param1, String param2) {
-        AvailableVehiclesFragment fragment = new AvailableVehiclesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
         firestore = FirebaseFirestore.getInstance();
         vehiclesArrayList = new ArrayList<>();
 
+        vehicleAdapter = new VehicleAdapter(vehiclesArrayList, this);
         getDataFromFireStore();
-        vehicleAdapter = new VehicleAdapter(vehiclesArrayList);
-
-        vehicleAdapter.setOnItemClickListener(new VehicleAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                vehicleClicked = vehiclesArrayList.get(position);
-                Bundle bundle = new Bundle();
-                bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
-
-                VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
-                vehicleInfoFragment.setArguments(bundle); //send bundle with info
-
-                FragmentManager fragmentManager = getParentFragment().getChildFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.setReorderingAllowed(true);
-                transaction.addToBackStack(null);
-                transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
-                transaction.commit();
-            }
-        });
     }
 
     @Override
@@ -106,8 +67,32 @@ public class AvailableVehiclesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         vehicleRecyclerView = rootView.findViewById(R.id.availableRecView);
-        vehicleRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
+        LinearLayoutManager llm = new LinearLayoutManager(this.getContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        vehicleRecyclerView.setLayoutManager(llm);
+        vehicleRecyclerView.setAdapter(vehicleAdapter);
+
+        vehicleAdapter.notifyDataSetChanged();
+
+//        vehicleAdapter.setOnItemClickListener(new VehicleAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(int position) {
+//                vehicleClicked = vehiclesArrayList.get(position);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
+//
+//                VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
+//                vehicleInfoFragment.setArguments(bundle); //send bundle with info
+//
+//                FragmentManager fragmentManager = getParentFragment().getChildFragmentManager();
+//                FragmentTransaction transaction = fragmentManager.beginTransaction();
+//                transaction.setReorderingAllowed(true);
+//                transaction.addToBackStack(null);
+//                transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
+//                transaction.commit();
+//            }
+//        });
     }
 
     public void getDataFromFireStore()
@@ -135,6 +120,7 @@ public class AvailableVehiclesFragment extends Fragment {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                             }
                             vehicleRecyclerView.setAdapter(vehicleAdapter); //info into recycler view
+                            Log.d(TAG, "adapter size: " + vehicleAdapter.getItemCount());
                         }
                         else
                         {
@@ -142,5 +128,24 @@ public class AvailableVehiclesFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Log.d(TAG, "onItemClick: clickedAVRecView");
+
+        vehicleClicked = vehiclesArrayList.get(position);
+        Bundle bundle = new Bundle();
+        bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
+
+        VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
+        vehicleInfoFragment.setArguments(bundle); //send bundle with info
+
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setReorderingAllowed(true);
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
+        transaction.commit();
     }
 }
