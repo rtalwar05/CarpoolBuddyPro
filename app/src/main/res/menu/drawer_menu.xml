@@ -9,10 +9,10 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_baseline_person_24"
             android:title="Your Profile" />
-        <item
+<!--        <item
             android:id="@+id/nav_yourvehicles"
             android:icon="@drawable/ic_baseline_reorder_24"
-            android:title="Your Vehicles" />
+            android:title="Your Vehicles" />-->
         <item
             android:id="@+id/nav_newvehicles"
             android:icon="@drawable/ic_baseline_electric_car_24"
