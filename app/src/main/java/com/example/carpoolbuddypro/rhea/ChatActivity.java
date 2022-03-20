@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.carpoolbuddypro.databinding.ActivityChatBinding;
+//import com.example.carpoolbuddypro.databinding.ActivityChatBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -22,7 +22,7 @@ import java.util.Base64;
 
 public class ChatActivity extends AppCompatActivity {
 
-    private ActivityChatBinding binding;
+//    private ActivityChatBinding binding;
     public SharedPreferences preferenceManager;
 
 
@@ -30,8 +30,8 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityChatBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+//        binding = ActivityChatBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
         preferenceManager = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         loadUserDetails();
         getToken();

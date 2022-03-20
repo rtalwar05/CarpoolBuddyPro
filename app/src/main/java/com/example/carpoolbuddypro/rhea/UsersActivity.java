@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.carpoolbuddypro.R;
-import com.example.carpoolbuddypro.databinding.ActivityChatBinding;
+//import com.example.carpoolbuddypro.databinding.ActivityChatBinding;
 import com.example.carpoolbuddypro.databinding.ActivityUsersBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,7 +30,7 @@ public class UsersActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding = ActivityUsersBinding.inflate(getLayoutInflater());
-        setListeners();
+//        setListeners();
         getUsers();
 
 
@@ -68,8 +68,8 @@ public class UsersActivity extends AppCompatActivity {
                         }
 
                         if (users.size() > 0) {
-                            UsersAdapter usersAdapter = new UsersAdapter(users);
-                            binding.usersRecyclerView.setAdapter();
+//                            UsersAdapter usersAdapter = new UsersAdapter(users);
+//                            binding.usersRecyclerView.setAdapter();
                             binding.usersRecyclerView.setVisibility(View.VISIBLE);
                         } else {
                             showErrorMessage();

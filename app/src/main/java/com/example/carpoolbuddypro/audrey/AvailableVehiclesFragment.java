@@ -136,10 +136,11 @@ public class AvailableVehiclesFragment extends Fragment implements VehicleAdapte
 
         vehicleClicked = vehiclesArrayList.get(position);
         Bundle bundle = new Bundle();
-        bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
+        bundle.putString("licensePlate", vehicleClicked.getLiscensePlate()); //to send
 
-        VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
-        vehicleInfoFragment.setArguments(bundle); //send bundle with info
+        getParentFragmentManager().setFragmentResult("getLicensePlate", bundle);
+//        VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
+//        vehicleInfoFragment.setArguments(bundle); //send bundle with info
 
         FragmentManager fragmentManager = getParentFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();

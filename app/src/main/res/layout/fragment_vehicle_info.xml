@@ -9,18 +9,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        android:background="#FFFFFF"
 
         <TextView
-            android:id="@+id/basePriceTextView"
+            android:id="@+id/basePriceTextViewVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="base price"
+            android:text="base price: NA"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/capacityTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/capacityTextViewVI" />
 
         <TextView
             android:id="@+id/vehicleInfoTextView"
@@ -38,20 +39,19 @@
             android:id="@+id/carImageView"
             android:layout_width="130dp"
             android:layout_height="115dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/ic_message"
-            app:layout_constraintBottom_toTopOf="@+id/licensePlateTextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/vehicleInfoTextView" />
 
         <TextView
-            android:id="@+id/licensePlateTextView"
+            android:id="@+id/licensePlateTextViewVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="license plate"
+            android:text="license plate: NA"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -59,52 +59,52 @@
             app:layout_constraintTop_toBottomOf="@+id/carImageView" />
 
         <TextView
-            android:id="@+id/modelTextView"
+            android:id="@+id/modelTextViewVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="model"
+            android:text="model: NA"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ownerTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/ownerTextViewVI" />
 
         <TextView
-            android:id="@+id/ownerTextView"
+            android:id="@+id/ownerTextViewVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="owner"
+            android:text="owner: NA"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/licensePlateTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/licensePlateTextViewVI" />
 
         <TextView
-            android:id="@+id/capacityTextView"
+            android:id="@+id/capacityTextViewVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="capacity"
+            android:text="capacity: NA"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modelTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/modelTextViewVI" />
 
         <TextView
-            android:id="@+id/greenPointsTextView"
+            android:id="@+id/greenPointsTextViewVI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="green points"
+            android:text="green points: NA"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/basePriceTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/basePriceTextViewVI" />
 
         <Button
             android:id="@+id/bookVehicleButton"
@@ -117,7 +117,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/greenPointsTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/greenPointsTextViewVI" />
 
         <Button
             android:id="@+id/chatWithDriverButton"

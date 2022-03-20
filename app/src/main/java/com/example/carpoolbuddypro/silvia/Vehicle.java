@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Vehicle {
 
-    String liscenseplate;
+    String liscensePlate;
     String model;
     int capacity;
     ArrayList<String> ridersUID;
@@ -19,7 +19,7 @@ public class Vehicle {
     public Vehicle(String liscenseplate, String model, int capacity,
                    ArrayList<String> ridersUID, boolean open,
                    double basePrice, boolean isGreen, String energytype, String owner) {
-        this.liscenseplate = liscenseplate;
+        this.liscensePlate = liscenseplate;
         this.model = model;
         this.capacity = capacity;
         this.ridersUID = ridersUID;
@@ -46,12 +46,12 @@ public class Vehicle {
         this.energytype = energytype;
     }
 
-    public String getLiscenseplate() {
-        return liscenseplate;
+    public String getLiscensePlate() {
+        return liscensePlate;
     }
 
-    public void setLiscenseplate(String liscenseplate) {
-        this.liscenseplate = liscenseplate;
+    public void setLiscensePlate(String liscenseplate) {
+        this.liscensePlate = liscenseplate;
     }
 
     public boolean isGreen() {
