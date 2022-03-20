@@ -1,5 +1,7 @@
 package com.example.carpoolbuddypro.audrey;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +10,7 @@ import androidx.fragment.app.FragmentResultListener;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,10 +58,12 @@ public class VehicleInfoFragment extends Fragment {
         container.removeAllViews();
 //        bundle = this.getArguments();
 //        licensePlateString = bundle.getString("licensePlate");
+//        Log.i(TAG, "onFragmentResult: licensePlate received --> " + licensePlateString);
         getParentFragmentManager().setFragmentResultListener("getLicensePlate", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 licensePlateString = result.getString("licensePlate");
+                Log.i(TAG, "onFragmentResult: licensePlate received --> " + licensePlateString);
             }
         });
 
