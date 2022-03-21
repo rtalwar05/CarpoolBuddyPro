@@ -6,22 +6,28 @@
         <entry key="app/src/main/res/drawable/background_content_bottom.xml" value="0.14370729883418723" />
         <entry key="app/src/main/res/drawable/background_icon.xml" value="0.1015625" />
         <entry key="app/src/main/res/drawable/background_image.xml" value="0.1015625" />
+        <entry key="app/src/main/res/drawable/background_received_message.xml" value="0.2935185185185185" />
+        <entry key="app/src/main/res/drawable/background_recieved_message.xml" value="0.2935185185185185" />
+        <entry key="app/src/main/res/drawable/background_sent_message.xml" value="0.30773047103392465" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.17083333333333334" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_chat2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_silviastestingactivity.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/activity_texting.xml" value="0.31649091395164797" />
         <entry key="app/src/main/res/layout/activity_users.xml" value="0.41083553546558427" />
         <entry key="app/src/main/res/layout/app_bar_silviastestingactivity.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/chat_profile_item.xml" value="0.21557971014492755" />
         <entry key="app/src/main/res/layout/content_silviastestingactivity.xml" value="0.15526849037487336" />
         <entry key="app/src/main/res/layout/fragment_add_vehicle.xml" value="0.2380164221774117" />
-        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.5879411237968194" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_one.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/fragment_vehicle_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_container_recieved.xml" value="0.36440154395813423" />
+        <entry key="app/src/main/res/layout/item_container_sent.xml" value="0.3357325104233939" />
         <entry key="app/src/main/res/layout/item_container_user.xml" value="0.17475728155339806" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.6313637733648175" />
         <entry key="app/src/main/res/layout/testsilvia_activity.xml" value="0.16210739614994935" />
@@ -34,5 +40,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.20731160792938044" />
+      </ProjectState>
+    </option>
   </component>
 </project>

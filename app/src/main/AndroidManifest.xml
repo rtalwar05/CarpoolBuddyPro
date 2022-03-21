@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.carpoolbuddypro">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -19,9 +18,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarpoolBuddyPro">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="@string/map_key"/>
+        <activity
+            android:name=".rhea.TextingActivity"
+            android:exported="true" />
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -30,14 +33,13 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-<!--        <meta-data-->
-<!--            android:name="com.google.android.geo.API_KEY"-->
-<!--            android:value="@string/google_maps_key" />-->
-
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.geo.API_KEY" -->
+        <!-- android:value="@string/google_maps_key" /> -->
         <activity
             android:name=".audrey.TestingActivity"
-            android:theme = "@style/Theme.CarpoolBuddyPro.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.CarpoolBuddyPro.NoActionBar" />
         <activity
             android:name=".rhea.LogInActivity"
             android:exported="true">
@@ -55,10 +57,9 @@
             android:name=".rhea.ChatService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

@@ -11,15 +11,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.carpoolbuddypro.databinding.ItemContainerUserBinding;
 import com.example.carpoolbuddypro.silvia.User;
 
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
-public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHolder> {
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHolder>{
 
-    private final List<User> users;
+    private final ArrayList<User> users;
+    private final UserListener userListener;
 
-    public UsersAdapter(List<User> users) {
+    public UsersAdapter(List<User> users, UserListener userListener ) {
+
         this.users = users;
+        this.userListener = userListener;
     }
 
     @NonNull
@@ -58,7 +62,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHol
         {
             binding.TextName.setText(user.getName());
             binding.textEmail.setText(user.getEmail());
-            // binding.imageProfile.setImageBitmap(getUserImage(user.getImage));
+            binding.getRoot().setOnClickListener(v -> userListener.onUserClicked(user));
 
         }
 
