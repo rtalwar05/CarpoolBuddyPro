@@ -16,10 +16,10 @@ public class Vehicle {
 
     public Vehicle (){}
 
-    public Vehicle(String liscenseplate, String model, int capacity,
-                   ArrayList<String> ridersUID, boolean open,
-                   double basePrice, boolean isGreen, String energytype, String owner) {
-        this.liscensePlate = liscenseplate;
+    public Vehicle(String licenseplate, String model, int capacity, ArrayList<String> ridersUID, 
+                   boolean open, double basePrice, boolean isGreen, String energytype, String owner)
+    {
+        this.liscensePlate = licenseplate;
         this.model = model;
         this.capacity = capacity;
         this.ridersUID = ridersUID;

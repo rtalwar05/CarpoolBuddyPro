@@ -74,25 +74,6 @@ public class AvailableVehiclesFragment extends Fragment implements VehicleAdapte
         vehicleRecyclerView.setAdapter(vehicleAdapter);
 
         vehicleAdapter.notifyDataSetChanged();
-
-//        vehicleAdapter.setOnItemClickListener(new VehicleAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(int position) {
-//                vehicleClicked = vehiclesArrayList.get(position);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("licensePlate", vehicleClicked.getLiscenseplate()); //to send
-//
-//                VehicleInfoFragment vehicleInfoFragment = new VehicleInfoFragment();
-//                vehicleInfoFragment.setArguments(bundle); //send bundle with info
-//
-//                FragmentManager fragmentManager = getParentFragment().getChildFragmentManager();
-//                FragmentTransaction transaction = fragmentManager.beginTransaction();
-//                transaction.setReorderingAllowed(true);
-//                transaction.addToBackStack(null);
-//                transaction.replace(R.id.availableVehiclesFragment, VehicleInfoFragment.class, null);
-//                transaction.commit();
-//            }
-//        });
     }
 
     public void getDataFromFireStore()

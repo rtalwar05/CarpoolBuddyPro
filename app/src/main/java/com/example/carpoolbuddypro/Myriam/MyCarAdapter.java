@@ -15,8 +15,10 @@ import java.util.ArrayList;
 public class MyCarAdapter extends RecyclerView.Adapter<MyVehicleViewHolder> {
 
     ArrayList<String> mData;
+    ArrayList<String> names;
+    ArrayList<String> capacities;
 
-    public MyCarAdapter(ArrayList<String> data)
+    public MyCarAdapter(ArrayList<String> data, ArrayList<String> data1)
     {
         mData = data;
     }
@@ -35,13 +37,19 @@ public class MyCarAdapter extends RecyclerView.Adapter<MyVehicleViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyVehicleViewHolder holder, int position)
     {
-        holder.liscenceText.setText(mData.get(position));
-        holder.capText.setText("not found");
+        holder.liscenceText.setText(names.get(position));
+        holder.capText.setText(capacities.get(position));
     }
 
     @Override
     public int getItemCount()
     {
         return mData.size();
+    }
+
+    public void setData(ArrayList<String> data1, ArrayList<String> data2)
+    {
+        names = data1;
+        capacities = data2;
     }
 }
