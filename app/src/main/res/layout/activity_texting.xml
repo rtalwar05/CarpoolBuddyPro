@@ -17,14 +17,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"
-        android:src="@drawable/ic_send"
-        app:tint="@color/black"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="8dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:src="@drawable/ic_send"
+            app:tint="@color/black"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="8dp" />
 
     </FrameLayout>
 
@@ -32,6 +32,8 @@
         android:id="@+id/inputMessage"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:hint="Type a Message"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
@@ -41,12 +43,16 @@
         android:textColor="black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/layoutSend"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:clipToPadding="false"
         android:orientation="vertical"
         android:overSscrollMode="never"
@@ -54,10 +60,11 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomof="@id/inputMessage"
         app:layout_constraintBottom_toTopOf="@+id/inputMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottom0f="@id/imageBack"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
     <ProgressBar
@@ -77,40 +84,14 @@
         android:id="@+id/imageBack"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:padding="5dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStart0f="parent"
-        app:layout_constraintTop_toTopof="parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8sp"
-        android:layout_marginEnd="8dp"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottom0f="aid/imageBack"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndof="@id/imageBack"
-        app:layout_constraintTop_toTop0f="@id/imageBack" />
-
-
-
-
-
-
-
-
-
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopof="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
