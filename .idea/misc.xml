@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/car.xml" value="0.25677083333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.146875" />
         <entry key="app/src/main/res/drawable/ic_grey_search_24.xml" value="0.2805128205128205" />
         <entry key="app/src/main/res/drawable/ic_message.xml" value="0.1453125" />
         <entry key="app/src/main/res/drawable/search_back.xml" value="0.2805128205128205" />
@@ -13,7 +14,7 @@
         <entry key="app/src/main/res/layout/activity_new.xml" value="0.12083333333333333" />
         <entry key="app/src/main/res/layout/activity_silviastestingactivity.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/activity_testing.xml" value="0.1415619550451481" />
-        <entry key="app/src/main/res/layout/activity_texting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_texting.xml" value="0.10158374953320524" />
         <entry key="app/src/main/res/layout/app_bar_silviastestingactivity.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/chat_profile_item.xml" value="0.21557971014492755" />
         <entry key="app/src/main/res/layout/chat_user_profile.xml" value="0.13069908814589665" />
@@ -33,6 +34,7 @@
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.6313637733648175" />
         <entry key="app/src/main/res/layout/testsilvia_activity.xml" value="0.16210739614994935" />
         <entry key="app/src/main/res/layout/vehicle_row_view.xml" value="0.375" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/menu/silviastestingactivity.xml" value="0.32685185185185184" />
       </map>
     </option>

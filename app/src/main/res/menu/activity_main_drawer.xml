@@ -24,5 +24,9 @@
             android:id="@+id/bookvehicles"
             android:icon="@drawable/ic_baseline_electric_car_24"
             android:title="Book Vehicles" />
+        <item
+            android:id="@+id/maps"
+            android:icon="@drawable/ic_baseline_map_24"
+            android:title="Maps" />
     </group>
 </menu>
