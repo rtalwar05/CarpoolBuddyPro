@@ -64,6 +64,7 @@ public class UsersActivity extends AppCompatActivity {
                             user.setName(queryDocumentSnapshot.getString("Name"));
                             user.setEmail(queryDocumentSnapshot.getString("Email"));
                             user.setToken(queryDocumentSnapshot.getString("Token"));
+                            user.setUid(queryDocumentSnapshot.get("userId" ));
 
                         }
 

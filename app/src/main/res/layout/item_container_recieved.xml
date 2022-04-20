@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="4dp">
 
@@ -12,7 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4sp"
         android:background="@drawable/background_recieved_message"
-        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintWidth_max="wrap"
         android:textColor="@color/white"
         android:textsize="adimen/ _13ssp"
         app:layout_constraintStart_toStartOf="parent"

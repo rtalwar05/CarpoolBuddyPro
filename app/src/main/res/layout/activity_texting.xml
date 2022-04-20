@@ -27,8 +27,7 @@
             tools:layout_editor_absoluteY="8dp" />
 
     </FrameLayout>
-
-    <EditText
+    3<EditText
         android:id="@+id/inputMessage"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -45,6 +44,15 @@
         app:layout_constraintEnd_toStartOf="@id/layoutSend"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageBack"/>
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
@@ -55,14 +63,15 @@
         android:layout_marginBottom="8dp"
         android:clipToPadding="false"
         android:orientation="vertical"
-        android:overSscrollMode="never"
+        android:overScrollMode="never"
         android:padding="20sp"
+        app:layout_constraintEnd_toStartOf="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomof="@id/inputMessage"
         app:layout_constraintBottom_toTopOf="@+id/inputMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottom0f="@id/imageBack"
+        app:layout_constraintTop_toBottom0f="@id/viewSupporter"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -79,6 +88,8 @@
         app:layout_constraintStart_tostart0f="parent"
         app:layout_constraintTop_toTop0f="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <ImageView
         android:id="@+id/imageBack"

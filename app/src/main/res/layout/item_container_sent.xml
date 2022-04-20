@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="4sp">
 
@@ -11,7 +12,10 @@
         android:id="@+id/textMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="12sp"
+        android:paddingStart="12sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintWidth_max="wrap"
         android:background="@drawable/background_sent_message"
         android:textColor="@color/white"
         android:textSize="13sp"
