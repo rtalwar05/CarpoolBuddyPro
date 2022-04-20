@@ -16,7 +16,9 @@ import com.example.carpoolbuddypro.R;
 //import com.example.carpoolbuddypro.silvia.AvailableVehiclesFragment;
 import com.example.carpoolbuddypro.silvia.AddVehicleFragment;
 import com.example.carpoolbuddypro.silvia.ChatFragment;
+import com.example.carpoolbuddypro.silvia.MapsFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.google.common.collect.Maps;
 
 public class TestingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -77,6 +79,9 @@ public class TestingActivity extends AppCompatActivity implements NavigationView
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new AvailableVehiclesFragment()).commit();
                 break;
+            case R.id.maps:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MapsFragment()).commit();
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
